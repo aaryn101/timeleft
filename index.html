@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time Left</title>
+    <link rel="stylesheet" href="/stylesheets/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/lib/bootstrap-datepicker3.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+
+    <script src="/javascripts/lib/jquery-3.1.0.min.js"></script>
+    <script src="/javascripts/lib/angular.min.js"></script>
+    <script src="/javascripts/lib/angular-ui-router.min.js"></script>
+    <script src="/javascripts/lib/moment.min.js"></script>
+    <script src="/javascripts/lib/bootstrap-datepicker.min.js"></script>
+    <script src="/javascripts/angularApp.js"></script>
+</head>
+<body ng-app="timeLeft" ng-controller="MainController">
+    <div class="row">
+        <div class="col-md-2 col-md-offset-5">
+            <form>
+                <div class="form-group">
+                    <div class="input-group date" id="birthDatePicker">
+                        <input type="text" class="form-control" placeholder="Date of Birth" id="birthDate" name="birthDate" ng-model="birthDate">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-th"></i>
+                        </span>
+                    </div>
+                </div>
+            </form>
+            <script>
+                $(function(){
+                    $('#birthDatePicker').datepicker({
+                        autoclose: true,
+                        format: 'yyyy-mm-dd',
+                        orientation: 'bottom auto'
+                    });
+                });
+            </script>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1 class="text-center">{{msg}}</h1>
+        </div>
+    </div>
+</body>
+</html>
